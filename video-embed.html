@@ -13,23 +13,8 @@
   <video
     src="setiq-demo.mp4"
     controls
-    autoplay
-    muted
-    loop
     playsinline
-    preload="auto">
+    preload="metadata">
   </video>
-  <script>
-    /* Belt-and-suspenders: guarantee muted autoplay even if a browser
-       is strict about the attribute vs. property. */
-    (function () {
-      var v = document.querySelector('video');
-      if (!v) return;
-      v.muted = true;
-      v.defaultMuted = true;
-      var p = v.play();
-      if (p && p.catch) p.catch(function () {});
-    })();
-  </script>
 </body>
 </html>
